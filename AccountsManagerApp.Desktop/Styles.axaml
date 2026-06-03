@@ -1,48 +1,76 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="CommonResources.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
 
-  <Style Selector="TextBlock.title">
-    <Setter Property="FontSize" Value="25" />
-    <Setter Property="Foreground" Value="Red" />
-    <Setter Property="Margin" Value="20" />
-  </Style>
-
-  <Style Selector="Label">
-    <Setter Property="FontSize" Value="14" />
-    <Setter Property="HorizontalContentAlignment" Value="Left" />
-    <Setter Property="Margin" Value="15 5 5 10" />
-    <Setter Property="Padding" Value="5" />
-  </Style>
-  <Style Selector="TextBox">
-    <Setter Property="FontSize" Value="14" />
-    <Setter Property="HorizontalContentAlignment" Value="Right" />
-    <Setter Property="Margin" Value="5 5 15 10" />
-    <Setter Property="Padding" Value="5" />
-  </Style>
-
-  <Style Selector="Button">
-    <Setter Property="FontSize" Value="14" />
-    <Setter Property="HorizontalContentAlignment" Value="Center" />
-    <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="Width" Value="100" />
-    <Setter Property="Height" Value="35" />
-    <Setter Property="Foreground" Value="White" />
-
-    <Style Selector="^.login">
-      <Setter Property="Background" Value="Green" />
-      <Style Selector="^:pointerover">
-        <Setter Property="Cursor" Value="Hand"/>
-      </Style>
+    <!-- Заголовок -->
+    <Style Selector="TextBlock.title">
+        <Setter Property="FontSize" Value="{StaticResource ResourceKey=FontSizeTitle}" />
+        <Setter Property="Foreground" Value="Red" />
+        <Setter Property="Margin" Value="{StaticResource ResourceKey=MarginTitle}" />
     </Style>
-    <Style Selector="^.cancel">
-      <Setter Property="Background" Value="Red" />
-    </Style>
-  </Style>
 
-  <Style Selector="Panel.center">
-    <Setter Property="HorizontalAlignment" Value="Center" />
-  </Style>
-  <Style Selector="StackPanel.center">
-    <Setter Property="HorizontalAlignment" Value="Center" />
-  </Style>
+    <!-- Общие свойства Label и TextBox -->
+    <Style Selector="Label, TextBox">
+        <Setter Property="FontSize" Value="{StaticResource ResourceKey=FontSize}" />
+        <Setter Property="Padding" Value="5" />
+    </Style>
+
+    <!-- Уникальные свойства Label -->
+    <Style Selector="Label">
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Margin" Value="{StaticResource ResourceKey=MarginLabel}" />
+    </Style>
+
+    <!-- Уникальные свойства TextBox -->
+    <Style Selector="TextBox">
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="Margin" Value="{StaticResource ResourceKey=MarginTextBox}" />
+    </Style>
+
+    <!-- Базовый стиль кнопки -->
+    <Style Selector="Button">
+        <Setter Property="FontSize" Value="{StaticResource ResourceKey=FontSize}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Width" Value="{StaticResource ResourceKey=ButtonWidth}" />
+        <Setter Property="Height" Value="{StaticResource ResourceKey=ButtonHeight}" />
+        <Setter Property="Foreground" Value="White" />
+
+        <!-- Общее состояние при наведении -->
+        <Style Selector="^:pointerover">
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+        <!-- Кнопка входа (login) -->
+        <Style Selector="^.login">
+            <Setter Property="Background" Value="DarkGreen" />
+            
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="Green"/>
+                <Setter Property="CornerRadius" Value="{StaticResource ResourceKey=CornerRadiusRight}"/>
+            </Style>
+        </Style>
+
+        <!-- Кнопка отмены (cancel) -->
+        <Style Selector="^.cancel">
+            <Setter Property="Background" Value="DarkRed" />
+            
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="Red"/>
+                <Setter Property="CornerRadius" Value="{StaticResource ResourceKey=CornerRadiusLeft}"/>
+            </Style>
+        </Style>
+    </Style>
+
+    <!-- Центрирование панелей -->
+    <Style Selector="Panel.center, StackPanel.center">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
 </Styles>

@@ -1,0 +1,18 @@
+<!-- CommonResources.axaml -->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=netstandard">
+
+  <!-- Размеры шрифтов -->
+  <sys:Double x:Key="FontSize">14</sys:Double>
+  <sys:Double x:Key="FontSizeTitle">25</sys:Double>
+    
+  <!-- Отступы -->
+  <Thickness x:Key="MarginLabel">15 5 5 10</Thickness>
+  <Thickness x:Key="MarginTextBox">5 5 15 10</Thickness>
+  <Thickness x:Key="MarginTitle">20</Thickness>
+    
+  <!-- Размеры кнопок -->
+  <sys:Double x:Key="ButtonWidth">100</sys:Double>
+  <sys:Double x:Key="ButtonHeight">35</sys:Double>
+</ResourceDictionary>

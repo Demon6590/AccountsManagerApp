@@ -8,6 +8,14 @@
         Width="350" Height="250"
         WindowStartupLocation="CenterScreen">
 
+  <Window.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="ButtonTemplates.axaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Window.Resources>
+  
   <Window.Styles>
     <StyleInclude Source="Styles.axaml" />
   </Window.Styles>
@@ -44,10 +52,12 @@
                 Classes="center">
       <Button x:Name="Button_Login"
               Content="Войти"
-              Classes="login" />
+              Classes="login"
+              Template="{StaticResource ResourceKey=ButtonLeftTemplate}"/>
       <Button x:Name="Button_Cancel"
               Content="Отмена"
-              Classes="cancel" />
+              Classes="cancel"
+              Template="{StaticResource ResourceKey=ButtonRightTemplate}"/>
     </StackPanel>
   </StackPanel>
 </Window>
