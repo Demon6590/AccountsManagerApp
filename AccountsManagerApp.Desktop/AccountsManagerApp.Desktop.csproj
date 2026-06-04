@@ -9,13 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.3.12"/>
-    <PackageReference Include="Avalonia.Desktop" Version="11.3.12"/>
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.12"/>
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.12"/>
+    <PackageReference Include="Avalonia" Version="12.0.4"/>
+    <PackageReference Include="Avalonia.Desktop" Version="12.0.4"/>
+    <PackageReference Include="MessageBox.Avalonia" Version="12.0.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.4"/>
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="12.0.4"/>
     <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.1">
       <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Windows\AuthWindow\AuthWindow.axaml.cs">
+      <DependentUpon>AuthWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\MainWindow\MainWindow.axaml.cs">
+      <DependentUpon>MainWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

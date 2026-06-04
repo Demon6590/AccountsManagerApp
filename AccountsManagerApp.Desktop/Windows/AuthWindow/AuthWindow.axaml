@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="using:AccountsManagerApp.Desktop.Components"
 
         x:Class="AccountsManagerApp.Desktop.AuthWindow"
 
@@ -11,13 +12,13 @@
   <Window.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceInclude Source="ButtonTemplates.axaml"/>
+        <ResourceInclude Source="../../Templates/ButtonTemplates.axaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Window.Resources>
   
   <Window.Styles>
-    <StyleInclude Source="Styles.axaml" />
+    <StyleInclude Source="../../Styles/Styles.axaml" />
   </Window.Styles>
 
   <StackPanel Orientation="Vertical">
@@ -27,25 +28,12 @@
     </Panel>
 
     <StackPanel Orientation="Vertical">
-      <Grid ColumnDefinitions="*, 2.5*">
-        <Label x:Name="Label_Login"
-               Content="Логин"
-               Target="Input_Login"
-               Grid.Column="0" />
-        <TextBox x:Name="Input_Login"
-                 Watermark="Введите логин"
-                 Grid.Column="1" />
-      </Grid>
-
-      <Grid ColumnDefinitions="*, 2.5*">
-        <Label x:Name="Label_Password"
-               Content="Пароль"
-               Target="Input_Password"
-               Grid.Column="0" />
-        <TextBox x:Name="Input_Password"
-                 Watermark="Введите пароль"
-                 Grid.Column="1" />
-      </Grid>
+      <c:InputComponent x:Name="Input_Login"
+                        Placeholder="Введите логин"
+                        Label="Логин"/>
+      <c:InputComponent x:Name="Input_Password"
+                        Placeholder="Введите пароль"
+                        Label="Пароль"/>
     </StackPanel>
 
     <StackPanel Orientation="Horizontal"
@@ -53,11 +41,13 @@
       <Button x:Name="Button_Login"
               Content="Войти"
               Classes="login"
-              Template="{StaticResource ResourceKey=ButtonLeftTemplate}"/>
+              Template="{StaticResource ResourceKey=ButtonLeftTemplate}"
+              Click="Button_Login_OnClick"/>
       <Button x:Name="Button_Cancel"
               Content="Отмена"
               Classes="cancel"
-              Template="{StaticResource ResourceKey=ButtonRightTemplate}"/>
+              Template="{StaticResource ResourceKey=ButtonRightTemplate}"
+              Click="Button_Cancel_OnClick"/>
     </StackPanel>
   </StackPanel>
 </Window>

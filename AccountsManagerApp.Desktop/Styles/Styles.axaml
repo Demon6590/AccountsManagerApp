@@ -54,7 +54,6 @@
             
             <Style Selector="^:pointerover">
                 <Setter Property="Background" Value="Green"/>
-                <Setter Property="CornerRadius" Value="{StaticResource ResourceKey=CornerRadiusRight}"/>
             </Style>
         </Style>
 
@@ -64,7 +63,6 @@
             
             <Style Selector="^:pointerover">
                 <Setter Property="Background" Value="Red"/>
-                <Setter Property="CornerRadius" Value="{StaticResource ResourceKey=CornerRadiusLeft}"/>
             </Style>
         </Style>
     </Style>
