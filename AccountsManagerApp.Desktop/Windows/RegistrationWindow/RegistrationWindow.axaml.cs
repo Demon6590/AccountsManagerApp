@@ -31,13 +31,13 @@ public partial class RegistrationWindow : Window
 
     private async void Button_Login_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(Input_Mail.Value) || string.IsNullOrWhiteSpace(Input_Password.Value))
-        {
-            await MessageBoxManager
-                .GetMessageBoxStandard("Ошибка", "Поля почты и пароля не могут быть пустыми")
-                .ShowAsync();
-            return;
-        
+            if (string.IsNullOrWhiteSpace(Input_Mail.Value) || string.IsNullOrWhiteSpace(Input_Password.Value))
+    {
+        await MessageBoxManager
+            .GetMessageBoxStandard("Ошибка", "Поля почты и пароля не могут быть пустыми")
+            .ShowAsync();
+        return;
+    }
         if (Input_Password_Confirm.Value != Input_Password.Value)
         {
             await MessageBoxManager
