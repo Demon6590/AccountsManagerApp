@@ -30,4 +30,8 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Components\InputComponentMail\InputComponentMail.axaml" />
+  </ItemGroup>
 </Project>
