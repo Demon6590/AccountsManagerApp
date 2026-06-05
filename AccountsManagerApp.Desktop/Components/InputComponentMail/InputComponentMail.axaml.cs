@@ -52,7 +52,7 @@ public partial class InputComponentMail : UserControl
         }
     }
 
-    private void ValidateEmail(string? text)
+    public void ValidateEmail(string? text)
     {
        
         var textBox = this.FindControl<TextBox>("Input");
@@ -75,4 +75,5 @@ public partial class InputComponentMail : UserControl
         
         DataValidationErrors.ClearErrors(textBox);
     }
+    public bool HasErrors => DataValidationErrors.GetHasErrors(this.FindControl<TextBox>("Input"));
 }

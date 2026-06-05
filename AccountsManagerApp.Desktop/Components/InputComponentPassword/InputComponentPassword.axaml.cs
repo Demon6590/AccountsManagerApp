@@ -81,4 +81,5 @@ public partial class InputComponentPassword : UserControl
         
         DataValidationErrors.ClearErrors(textBox);
     }
+    public bool HasErrors => DataValidationErrors.GetHasErrors(this.FindControl<TextBox>("Input"));
 }

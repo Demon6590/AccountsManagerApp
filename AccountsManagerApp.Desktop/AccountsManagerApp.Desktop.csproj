@@ -36,8 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\users.json">
+    <None Remove="Data\users.json" />
+    <Content Include="Data\users.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
 </Project>
