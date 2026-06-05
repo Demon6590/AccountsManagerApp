@@ -34,4 +34,10 @@
   <ItemGroup>
     <AdditionalFiles Include="Components\InputComponentMail\InputComponentMail.axaml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\users.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
