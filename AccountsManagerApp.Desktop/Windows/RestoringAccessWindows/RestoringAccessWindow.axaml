@@ -1,0 +1,41 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="using:AccountsManagerApp.Desktop.Components"
+        x:Class="AccountsManagerApp.Desktop.Windows.RestoringAccessWindows.RestoringAccessWindow"
+        Title="{StaticResource ResourceKey=Title}">
+  <Window.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="../../Templates/ButtonTemplates.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Window.Resources>
+  <Window.Styles>
+    <StyleInclude Source="../../Styles/Styles.axaml" />
+  </Window.Styles>
+  <StackPanel Orientation="Vertical">
+    <Panel Classes="center">
+      <TextBlock Text="Регистрация"
+                 Classes="title" />
+    </Panel>
+    <StackPanel Orientation="Vertical">
+      <c:InputComponentMail x:Name="Input_Mail"
+                            Placeholder="Введите почту"
+                            Label="Электронная почта" />
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal"
+                Classes="center">
+      <Button x:Name="Button_Recover"
+              Content="Восстановить пароль"
+              Classes="login"
+              Template="{StaticResource ResourceKey=ButtonLeftTemplate}"
+              Click="Button_Recover_OnClick"/>
+      <Button x:Name="Button_Cancel"
+              Content="Назад"
+              Classes="cancel"
+              Template="{StaticResource ResourceKey=ButtonRightTemplate}"
+              Click="Button_Cancel_OnClick"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

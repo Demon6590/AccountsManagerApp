@@ -1,4 +1,5 @@
 using AccountsManagerApp.Desktop.Windows.RegistrationWindow;
+using AccountsManagerApp.Desktop.Windows.RestoringAccessWindows;
 
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -17,7 +18,7 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new RegistrationWindow();
+            desktop.MainWindow = new RestoringAccessWindow();
         }
 
         base.OnFrameworkInitializationCompleted();
