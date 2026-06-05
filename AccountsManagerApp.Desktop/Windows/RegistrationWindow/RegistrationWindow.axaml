@@ -34,13 +34,15 @@
     <StackPanel Orientation="Horizontal"
                 Classes="center">
       <Button x:Name="Button_Login"
-              Content="Войти"
+              Content="Зарегистрироваться"
               Classes="login"
-              Template="{StaticResource ResourceKey=ButtonLeftTemplate}" />
+              Template="{StaticResource ResourceKey=ButtonLeftTemplate}"
+              Click="Button_Login_OnClick"/>
       <Button x:Name="Button_Cancel"
               Content="Отмена"
               Classes="cancel"
-              Template="{StaticResource ResourceKey=ButtonRightTemplate}" />
+              Template="{StaticResource ResourceKey=ButtonRightTemplate}"
+              Click="Button_Cancel_OnClick"/>
     </StackPanel>
   </StackPanel>
 
