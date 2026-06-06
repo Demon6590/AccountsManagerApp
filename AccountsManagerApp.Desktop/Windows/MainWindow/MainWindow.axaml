@@ -15,7 +15,7 @@
   <Window.Styles>
     <StyleInclude Source="../../Styles/Styles.axaml" />
   </Window.Styles>
-  
+
   <StackPanel Orientation="Horizontal"
               Classes="center">
 

@@ -3,9 +3,9 @@
   <!-- Радиусы скругления для кнопок -->
   <CornerRadius x:Key="CornerRadiusLeft">0 15 0 15</CornerRadius>
   <CornerRadius x:Key="CornerRadiusRight">15 0 15 0</CornerRadius>
-  
+
   <!-- Шаблон кнопки -->
-  <ControlTemplate x:Key="ButtonBaseTemplate" 
+  <ControlTemplate x:Key="ButtonBaseTemplate"
                    TargetType="{x:Type TypeName=Button}">
     <Border Background="{TemplateBinding Property=Background}"
             BorderBrush="{TemplateBinding Property=BorderBrush}"
@@ -15,10 +15,10 @@
       <ContentPresenter Content="{TemplateBinding Property=Content}"
                         ContentTemplate="{TemplateBinding Property=ContentTemplate}"
                         HorizontalContentAlignment="{TemplateBinding Property=HorizontalContentAlignment}"
-                        VerticalContentAlignment="{TemplateBinding Property=VerticalContentAlignment}"/>
+                        VerticalContentAlignment="{TemplateBinding Property=VerticalContentAlignment}" />
     </Border>
   </ControlTemplate>
-  
+
   <ControlTemplate x:Key="ButtonLeftTemplate"
                    TargetType="{x:Type TypeName=Button}">
     <Border Background="{TemplateBinding Property=Background}"
@@ -29,10 +29,10 @@
       <ContentPresenter Content="{TemplateBinding Property=Content}"
                         ContentTemplate="{TemplateBinding Property=ContentTemplate}"
                         HorizontalContentAlignment="{TemplateBinding Property=HorizontalContentAlignment}"
-                        VerticalContentAlignment="{TemplateBinding Property=VerticalContentAlignment}"/>
+                        VerticalContentAlignment="{TemplateBinding Property=VerticalContentAlignment}" />
     </Border>
   </ControlTemplate>
-  
+
   <ControlTemplate x:Key="ButtonRightTemplate"
                    TargetType="{x:Type TypeName=Button}">
     <Border Background="{TemplateBinding Property=Background}"
@@ -43,7 +43,7 @@
       <ContentPresenter Content="{TemplateBinding Property=Content}"
                         ContentTemplate="{TemplateBinding Property=ContentTemplate}"
                         HorizontalContentAlignment="{TemplateBinding Property=HorizontalContentAlignment}"
-                        VerticalContentAlignment="{TemplateBinding Property=VerticalContentAlignment}"/>
+                        VerticalContentAlignment="{TemplateBinding Property=VerticalContentAlignment}" />
     </Border>
   </ControlTemplate>
 </ResourceDictionary>

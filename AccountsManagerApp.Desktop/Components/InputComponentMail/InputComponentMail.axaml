@@ -4,9 +4,9 @@
              x:Class="AccountsManagerApp.Desktop.Components.InputComponentMail"
              x:Name="Component">
   <UserControl.Styles>
-    <StyleInclude Source="../../Styles/Styles.axaml"/>
+    <StyleInclude Source="../../Styles/Styles.axaml" />
   </UserControl.Styles>
-  
+
   <Grid ColumnDefinitions="*, 2.5*">
     <Label Content="{Binding ElementName=Component, Path=Label, Mode=OneWay}"
            Target="{Binding ElementName=Input}"

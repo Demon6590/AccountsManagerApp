@@ -31,12 +31,12 @@
               Content="Восстановить пароль"
               Classes="login"
               Template="{StaticResource ResourceKey=ButtonLeftTemplate}"
-              Click="Button_Recover_OnClick"/>
+              Click="Button_Recover_OnClick" />
       <Button x:Name="Button_Back"
               Content="Назад"
               Classes="cancel"
               Template="{StaticResource ResourceKey=ButtonRightTemplate}"
-              Click="Button_Back_OnClick"/>
+              Click="Button_Back_OnClick" />
     </StackPanel>
   </StackPanel>
 </Window>

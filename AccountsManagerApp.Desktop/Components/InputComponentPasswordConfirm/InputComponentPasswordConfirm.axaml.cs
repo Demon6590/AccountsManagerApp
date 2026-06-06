@@ -7,7 +7,7 @@ namespace AccountsManagerApp.Desktop.Components;
 public partial class InputComponentPasswordConfirm : UserControl
 {
     public static readonly StyledProperty<object> LabelProperty =
-        AvaloniaProperty.Register<InputComponentPasswordConfirm,object>(nameof(Label));
+        AvaloniaProperty.Register<InputComponentPasswordConfirm, object>(nameof(Label));
 
     public object Label
     {
@@ -23,7 +23,7 @@ public partial class InputComponentPasswordConfirm : UserControl
         get => this.GetValue<string?>(InputComponentPasswordConfirm.ValueProperty);
         set => this.SetValue(InputComponentPasswordConfirm.ValueProperty, value);
     }
-    
+
     public static readonly StyledProperty<string?> PlaceholderProperty =
         AvaloniaProperty.Register<InputComponentPasswordConfirm
             , string?>(nameof(Placeholder));
@@ -35,6 +35,7 @@ public partial class InputComponentPasswordConfirm : UserControl
         set => this.SetValue(InputComponentPasswordConfirm
             .PlaceholderProperty, value);
     }
+
     public InputComponentPasswordConfirm()
     {
         InitializeComponent();

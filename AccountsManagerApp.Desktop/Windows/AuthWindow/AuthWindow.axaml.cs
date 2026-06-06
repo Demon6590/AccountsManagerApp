@@ -27,7 +27,7 @@ public partial class AuthWindow : Window
     {
         var login = Input_Login.Value;
         var password = Input_Password.Value;
-        
+
         if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
         {
             await MessageBoxManager
@@ -35,6 +35,7 @@ public partial class AuthWindow : Window
                 .ShowAsync();
             return;
         }
+
         if (Input_Login.HasErrors || Input_Password.HasErrors)
         {
             await MessageBoxManager
@@ -42,8 +43,6 @@ public partial class AuthWindow : Window
                 .ShowAsync();
             return;
         }
-
-
 
         string filePath = Path.Combine("Data", "users.json");
         List<UserAccount> usersList = new();
@@ -55,13 +54,15 @@ public partial class AuthWindow : Window
                 usersList = JsonSerializer.Deserialize<List<UserAccount>>(existingJson) ?? new List<UserAccount>();
             }
         }
-        if (!usersList.Any(u => string.Equals(u.Email, login, StringComparison.OrdinalIgnoreCase)))
+
+        if (!usersList.Any(u => string.Equals(u.Email, login)))
         {
             await MessageBoxManager
                 .GetMessageBoxStandard("Ошибка авторизаций", "Пользователь с такой почтой не зарегистрирован")
                 .ShowAsync();
             return;
         }
+
         var Window = new MainWindow();
         Window.Show();
         this.Close();

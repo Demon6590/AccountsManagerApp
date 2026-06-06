@@ -10,7 +10,7 @@ namespace AccountsManagerApp.Desktop.Components;
 public partial class InputComponentPassword : UserControl
 {
     public static readonly StyledProperty<object> LabelProperty =
-        AvaloniaProperty.Register<InputComponentPassword,object>(nameof(Label));
+        AvaloniaProperty.Register<InputComponentPassword, object>(nameof(Label));
 
     public object Label
     {
@@ -26,7 +26,7 @@ public partial class InputComponentPassword : UserControl
         get => this.GetValue<string?>(InputComponentPassword.ValueProperty);
         set => this.SetValue(InputComponentPassword.ValueProperty, value);
     }
-    
+
     public static readonly StyledProperty<string?> PlaceholderProperty =
         AvaloniaProperty.Register<InputComponentPassword, string?>(nameof(Placeholder));
 
@@ -35,6 +35,7 @@ public partial class InputComponentPassword : UserControl
         get => this.GetValue<string?>(InputComponentPassword.PlaceholderProperty);
         set => this.SetValue(InputComponentPassword.PlaceholderProperty, value);
     }
+
     public InputComponentPassword()
     {
         InitializeComponent();
@@ -49,6 +50,7 @@ public partial class InputComponentPassword : UserControl
             ValidatePassword(change.NewValue as string);
         }
     }
+
     private void ValidatePassword(string? text)
     {
         var textBox = this.FindControl<TextBox>("Input");
@@ -75,11 +77,13 @@ public partial class InputComponentPassword : UserControl
 
         if (!hasUpper || !hasLower || !hasDigit)
         {
-            DataValidationErrors.SetError(textBox, new Exception("Нужна минимум одна заглавная, одна строчная буква и цифра"));
+            DataValidationErrors.SetError(textBox,
+                new Exception("Нужна минимум одна заглавная, одна строчная буква и цифра"));
             return;
         }
-        
+
         DataValidationErrors.ClearErrors(textBox);
     }
+
     public bool HasErrors => DataValidationErrors.GetHasErrors(this.FindControl<TextBox>("Input"));
 }

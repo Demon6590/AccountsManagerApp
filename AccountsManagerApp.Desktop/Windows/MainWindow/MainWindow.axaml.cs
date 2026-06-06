@@ -15,6 +15,5 @@ public partial class MainWindow : Window
         var Window = new AuthWindow();
         Window.Show();
         this.Close();
-        
     }
 }

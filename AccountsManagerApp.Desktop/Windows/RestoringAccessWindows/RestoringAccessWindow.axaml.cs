@@ -2,9 +2,12 @@
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+
 using AccountsManagerApp.Desktop.Data;
+
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+
 using MsBox.Avalonia;
 
 namespace AccountsManagerApp.Desktop.Windows.RestoringAccessWindows;
@@ -32,6 +35,7 @@ public partial class RestoringAccessWindow : Window
                 .ShowAsync();
             return;
         }
+
         if (Input_Mail.HasErrors)
         {
             await MessageBoxManager
@@ -39,6 +43,7 @@ public partial class RestoringAccessWindow : Window
                 .ShowAsync();
             return;
         }
+
         string filePath = Path.Combine("Data", "users.json");
         List<UserAccount> usersList = new();
 
@@ -51,6 +56,7 @@ public partial class RestoringAccessWindow : Window
                 usersList = JsonSerializer.Deserialize<List<UserAccount>>(existingJson) ?? new List<UserAccount>();
             }
         }
+
         var user = usersList.FirstOrDefault(u => string.Equals(u.Email, Input_Mail.Value));
 
         if (user == null)
@@ -60,15 +66,17 @@ public partial class RestoringAccessWindow : Window
                 .ShowAsync();
             return;
         }
+
         usersList.Remove(user);
-        var updatedUser = user with { Password = "Temp1234" }; 
+        var updatedUser = user with { Password = "Temp1234" };
         usersList.Add(updatedUser);
         string updatedJson = JsonSerializer.Serialize(usersList);
         await File.WriteAllTextAsync(filePath, updatedJson);
         await MessageBoxManager
-            .GetMessageBoxStandard("Успех", "Временный пароль отправлен на вашу почту. Проверьте папку «Входящие» и «Спам»")
+            .GetMessageBoxStandard("Успех",
+                "Временный пароль отправлен на вашу почту. Проверьте папку «Входящие» и «Спам»")
             .ShowAsync();
-        
+
         var authWindow = new AuthWindow();
         authWindow.Show();
         this.Close();

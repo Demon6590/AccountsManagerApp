@@ -6,7 +6,7 @@ namespace AccountsManagerApp.Desktop.Components;
 public partial class InputComponent : UserControl
 {
     public static readonly StyledProperty<object> LabelProperty =
-        AvaloniaProperty.Register<InputComponent,object>(nameof(Label));
+        AvaloniaProperty.Register<InputComponent, object>(nameof(Label));
 
     public object Label
     {
@@ -22,7 +22,7 @@ public partial class InputComponent : UserControl
         get => this.GetValue<string?>(InputComponent.ValueProperty);
         set => this.SetValue(InputComponent.ValueProperty, value);
     }
-    
+
     public static readonly StyledProperty<string?> PlaceholderProperty =
         AvaloniaProperty.Register<InputComponent, string?>(nameof(Placeholder));
 
@@ -31,7 +31,7 @@ public partial class InputComponent : UserControl
         get => this.GetValue<string?>(InputComponent.PlaceholderProperty);
         set => this.SetValue(InputComponent.PlaceholderProperty, value);
     }
-    
+
     public InputComponent()
     {
         InitializeComponent();

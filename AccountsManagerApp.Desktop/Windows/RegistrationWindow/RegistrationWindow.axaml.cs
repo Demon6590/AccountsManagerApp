@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+
 using AccountsManagerApp.Desktop.Data;
 using AccountsManagerApp.Desktop.Windows.RestoringAccessWindows;
 
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+
 using MsBox.Avalonia;
 
 namespace AccountsManagerApp.Desktop.Windows.RegistrationWindow;
@@ -35,6 +37,7 @@ public partial class RegistrationWindow : Window
                 .ShowAsync();
             return;
         }
+
         if (Input_Mail.HasErrors || Input_Password.HasErrors)
         {
             await MessageBoxManager
@@ -42,6 +45,7 @@ public partial class RegistrationWindow : Window
                 .ShowAsync();
             return;
         }
+
         if (Input_Password_Confirm.Value != Input_Password.Value)
         {
             await MessageBoxManager
@@ -63,15 +67,15 @@ public partial class RegistrationWindow : Window
                 usersList = JsonSerializer.Deserialize<List<UserAccount>>(existingJson) ?? new List<UserAccount>();
             }
         }
-        
-        if (usersList.Any(u => string.Equals(u.Email, Input_Mail.Value, StringComparison.OrdinalIgnoreCase)))
+
+        if (usersList.Any(u => string.Equals(u.Email, Input_Mail.Value)))
         {
             await MessageBoxManager
                 .GetMessageBoxStandard("Ошибка регистрации", "Пользователь с такой почтой уже зарегистрирован")
                 .ShowAsync();
             return;
         }
-        
+
         var newUser = new UserAccount(Input_Mail.Value, Input_Password.Value);
         usersList.Add(newUser);
 
@@ -85,6 +89,7 @@ public partial class RegistrationWindow : Window
         Window.Show();
         this.Close();
     }
+
     private void Open_AuthWindow_OnClick(object? sender, RoutedEventArgs e)
     {
         var authWindow = new AuthWindow();

@@ -29,11 +29,11 @@
 
     <StackPanel Orientation="Vertical">
       <c:InputComponentMail x:Name="Input_Login"
-                        Placeholder="Введите логин"
-                        Label="Логин" />
+                            Placeholder="Введите логин"
+                            Label="Логин" />
       <c:InputComponentPassword x:Name="Input_Password"
-                        Placeholder="Введите пароль"
-                        Label="Пароль" />
+                                Placeholder="Введите пароль"
+                                Label="Пароль" />
     </StackPanel>
 
     <StackPanel Orientation="Horizontal"
