@@ -20,12 +20,14 @@
     <Style Selector="Label, TextBox">
         <Setter Property="FontSize" Value="{StaticResource ResourceKey=FontSize}" />
         <Setter Property="Padding" Value="5" />
+        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
     </Style>
 
     <!-- Уникальные свойства Label -->
     <Style Selector="Label">
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="Margin" Value="{StaticResource ResourceKey=MarginLabel}" />
+        
     </Style>
 
     <!-- Уникальные свойства TextBox -->

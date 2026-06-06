@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:c="using:AccountsManagerApp.Desktop.Components"
         x:Class="AccountsManagerApp.Desktop.Windows.RestoringAccessWindows.RestoringAccessWindow"
+        Width="580" Height="160"
         Title="{StaticResource ResourceKey=Title}">
   <Window.Resources>
     <ResourceDictionary>
@@ -15,7 +16,7 @@
   </Window.Styles>
   <StackPanel Orientation="Vertical">
     <Panel Classes="center">
-      <TextBlock Text="Регистрация"
+      <TextBlock Text="Восстановление доступа"
                  Classes="title" />
     </Panel>
     <StackPanel Orientation="Vertical">
@@ -31,11 +32,11 @@
               Classes="login"
               Template="{StaticResource ResourceKey=ButtonLeftTemplate}"
               Click="Button_Recover_OnClick"/>
-      <Button x:Name="Button_Cancel"
+      <Button x:Name="Button_Back"
               Content="Назад"
               Classes="cancel"
               Template="{StaticResource ResourceKey=ButtonRightTemplate}"
-              Click="Button_Cancel_OnClick"/>
+              Click="Button_Back_OnClick"/>
     </StackPanel>
   </StackPanel>
 </Window>

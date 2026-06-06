@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-
 using AccountsManagerApp.Desktop.Data;
-
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
-
 using MsBox.Avalonia;
 
 namespace AccountsManagerApp.Desktop.Windows.RestoringAccessWindows;
@@ -22,7 +16,7 @@ public partial class RestoringAccessWindow : Window
         InitializeComponent();
     }
 
-    private void Button_Cancel_OnClick(object? sender, RoutedEventArgs e)
+    private void Button_Back_OnClick(object? sender, RoutedEventArgs e)
     {
         var authWindow = new AuthWindow();
         authWindow.Show();

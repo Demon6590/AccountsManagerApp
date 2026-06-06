@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using AccountsManagerApp.Desktop.Data;
+using AccountsManagerApp.Desktop.Windows.RestoringAccessWindows;
+
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using MsBox.Avalonia;
@@ -81,6 +83,19 @@ public partial class RegistrationWindow : Window
             .ShowAsync();
         var Window = new AuthWindow();
         Window.Show();
+        this.Close();
+    }
+    private void Open_AuthWindow_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var authWindow = new AuthWindow();
+        authWindow.Show();
+        this.Close();
+    }
+
+    private void Open_RestoringAccessWindow_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var authWindow = new RestoringAccessWindow();
+        authWindow.Show();
         this.Close();
     }
 }

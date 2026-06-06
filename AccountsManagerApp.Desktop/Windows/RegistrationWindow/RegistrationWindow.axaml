@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:c="using:AccountsManagerApp.Desktop.Components"
         x:Class="AccountsManagerApp.Desktop.Windows.RegistrationWindow.RegistrationWindow"
+        Width="600" Height="330"
         Title="{StaticResource ResourceKey=Title}">
   <Window.Resources>
     <ResourceDictionary>
@@ -37,13 +38,19 @@
               Content="Зарегистрироваться"
               Classes="login"
               Template="{StaticResource ResourceKey=ButtonLeftTemplate}"
-              Click="Button_Login_OnClick"/>
+              Click="Button_Login_OnClick" />
       <Button x:Name="Button_Cancel"
               Content="Отмена"
               Classes="cancel"
               Template="{StaticResource ResourceKey=ButtonRightTemplate}"
-              Click="Button_Cancel_OnClick"/>
+              Click="Button_Cancel_OnClick" />
+    </StackPanel>
+    <StackPanel Orientation="Horizontal"
+                Classes="center">
+      <HyperlinkButton Content="Уже есть аккаунт? Войти"
+                       Click="Open_AuthWindow_OnClick" />
+      <HyperlinkButton Content="Восстановить доступ"
+                       Click="Open_RestoringAccessWindow_OnClick" />
     </StackPanel>
   </StackPanel>
-
 </Window>

@@ -12,11 +12,11 @@
   <Window.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceInclude Source="../../Templates/ButtonTemplates.axaml"/>
+        <ResourceInclude Source="../../Templates/ButtonTemplates.axaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Window.Resources>
-  
+
   <Window.Styles>
     <StyleInclude Source="../../Styles/Styles.axaml" />
   </Window.Styles>
@@ -28,12 +28,12 @@
     </Panel>
 
     <StackPanel Orientation="Vertical">
-      <c:InputComponent x:Name="Input_Login"
+      <c:InputComponentMail x:Name="Input_Login"
                         Placeholder="Введите логин"
-                        Label="Логин"/>
-      <c:InputComponent x:Name="Input_Password"
+                        Label="Логин" />
+      <c:InputComponentPassword x:Name="Input_Password"
                         Placeholder="Введите пароль"
-                        Label="Пароль"/>
+                        Label="Пароль" />
     </StackPanel>
 
     <StackPanel Orientation="Horizontal"
@@ -42,12 +42,20 @@
               Content="Войти"
               Classes="login"
               Template="{StaticResource ResourceKey=ButtonLeftTemplate}"
-              Click="Button_Login_OnClick"/>
+              Click="Button_Login_OnClick" />
       <Button x:Name="Button_Cancel"
               Content="Отмена"
               Classes="cancel"
               Template="{StaticResource ResourceKey=ButtonRightTemplate}"
-              Click="Button_Cancel_OnClick"/>
+              Click="Button_Cancel_OnClick" />
     </StackPanel>
+    <StackPanel Orientation="Horizontal"
+                Classes="center">
+      <HyperlinkButton Content="Зарегистрироваться"
+                       Click="Open_RegistrationWindow_OnClick" />
+      <HyperlinkButton Content="Забыли пароль?"
+                       Click="Open_RestoringAccessWindow_OnClick" />
+    </StackPanel>
+
   </StackPanel>
 </Window>
